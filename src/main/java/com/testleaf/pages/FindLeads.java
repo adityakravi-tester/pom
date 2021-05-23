@@ -16,6 +16,11 @@ public class FindLeads extends ProjectSpecificMethods{
     this.driver = driver;
     this.property = property;
   }
+  
+  public FindLeads enterFirstName(String firstName) {
+    driver.findElementByXPath("(//input[@name='firstName' and @type='text'])[3]").sendKeys(firstName);
+    return this;
+  }
 
   public FindLeads clickPhoneTab() {
     driver.findElement(By.xpath("//span[text()='Phone']")).click();
@@ -48,11 +53,6 @@ public class FindLeads extends ProjectSpecificMethods{
   public ViewLeadPage clickFoundLeadId() {
     driver.findElement(By.xpath("//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a")).click();
     return new ViewLeadPage(driver, property);
-  }
-  
-  public MyLeadsPage deleteLead() {
-    driver.findElement(By.linkText("Delete")).click();
-    return new MyLeadsPage(driver, property);
   }
   
   public FindLeads searchLead() {

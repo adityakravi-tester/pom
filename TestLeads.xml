@@ -5,7 +5,8 @@
   <parameter name="language" value="english"></parameter>
     <classes>
       <!-- <class name="com.testleaf.tests.CreateLeadTest"/> -->
-      <class name="com.testleaf.tests.DeleteLeadTest"/>
+     <!--  <class name="com.testleaf.tests.DeleteLeadTest"/> -->
+      <class name="com.testleaf.tests.EditLeadTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -24,5 +24,17 @@ public class ViewLeadPage extends ProjectSpecificMethods{
     driver.findElement(By.linkText("Delete")).click();
     return new MyLeadsPage(driver, property);
   }
+  
+  public EditLeadPage clickEditButton() {
+    driver.findElement(By.linkText("Edit")).click();
+    return new EditLeadPage(driver, property);
+  }
+  
+  public ViewLeadPage verifyCompanyUpdated(String companyName) {
+    String actualCompanyName = driver.findElement(By.id("viewLead_companyName_sp")).getText();
+    actualCompanyName = actualCompanyName.replaceAll("[^a-zA-Z]","");;
+    Assert.assertEquals(actualCompanyName.trim(), companyName, "Company name not updated !!!");
+    return this;
+  }
 
 }
