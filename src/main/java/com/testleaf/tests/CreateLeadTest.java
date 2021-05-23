@@ -9,14 +9,14 @@ public class CreateLeadTest extends ProjectSpecificMethods{
   
   @BeforeTest
   public void setTestDataFile() {
-      excelDataFile = "CreateLead";
+    excelDataFile = "CreateLead";
   }
   
   @Test(dataProvider = "setData")
   public void testCreateLead(String company, String firstName, String lastName, String phoneNumber, String emailID) {
-    new LoginPage(driver)
-    .enterUserName("DemoSalesManager")
-    .enterPassword("crmsfa")
+    new LoginPage(driver, property)
+    .enterUserName(property.getProperty("username"))
+    .enterPassword(property.getProperty("password"))
     .clickLoginButton()
     .clickCrmsfaLink()
     .clickLeadsTab()

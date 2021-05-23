@@ -1,13 +1,16 @@
 package com.testleaf.pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.testleaf.base.ProjectSpecificMethods;
 
 public class CreateLeadPage extends ProjectSpecificMethods{
 
-  public CreateLeadPage(ChromeDriver driver) {
+  public CreateLeadPage(ChromeDriver driver, Properties property) {
     this.driver = driver;
+    this.property = property;
   }
   
   public CreateLeadPage enterCompanyName(String companyName) {
@@ -37,7 +40,7 @@ public class CreateLeadPage extends ProjectSpecificMethods{
   
   public ViewLeadPage clickCreateButton() {
     driver.findElement(By.name("submitButton")).click();
-    return new ViewLeadPage(driver);
+    return new ViewLeadPage(driver, property);
   }
 
 }
