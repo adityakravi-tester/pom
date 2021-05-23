@@ -23,4 +23,5 @@ public class MyLeadsPage extends ProjectSpecificMethods{
     driver.findElement(By.linkText("Find Leads")).click();
     return new FindLeads(driver, property);
   }
+  
 }

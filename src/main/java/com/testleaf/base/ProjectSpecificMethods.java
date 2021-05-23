@@ -43,7 +43,7 @@ public class ProjectSpecificMethods {
 
   @AfterMethod
   public void tearDown() throws IOException {
-    driver.close();
+//    driver.close();
     //Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
   }
 
